@@ -47,6 +47,12 @@ namespace WebGLxna.Pages
             _game.Tick();
         }
 
+        [JSInvokable]
+        public void OnResize()
+        {
+            var bwnd = (MonoGame.Framework.BlazorGameWindow)_game.Window;
+            bwnd.OnResize();
+        }
 
         public void OnMouseWheel(WheelEventArgs e)
         {

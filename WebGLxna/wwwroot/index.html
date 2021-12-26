@@ -32,21 +32,29 @@
         var lastFrameTime = 0;
         function tickJS()
         {
-            // resize the canvas to fit its parent
-            var canvas = document.getElementById('theCanvas');
-
-            var holder = document.getElementById('canvasHolder');
-            canvas.width = holder.clientWidth;
-            canvas.height = holder.clientHeight;
-
             window.theInstance.invokeMethod('TickDotNet');
-
             window.requestAnimationFrame(tickJS);
         }
 
         window.initRenderJS = (instance) =>
         {
             window.theInstance = instance;
+
+            // set initial canvas size
+            var canvas = document.getElementById('theCanvas');
+            var holder = document.getElementById('canvasHolder');
+            canvas.width = holder.clientWidth;
+            canvas.height = holder.clientHeight;
+
+            window.onresize = function(event)
+            {
+                var canvas = document.getElementById('theCanvas');
+                canvas.width = event.target.innerWidth;
+                canvas.height = event.target.innerHeight;
+                window.theInstance.invokeMethod('OnResize');
+            };
+
+            // begin game loop
             window.requestAnimationFrame(tickJS);
         };
     </script>
