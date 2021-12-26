@@ -1,0 +1,33 @@
+﻿@page "/"
+@inject IJSRuntime JsRuntime
+@using tainicom.Wasm.Canvas
+
+
+<PageTitle>Index</PageTitle>
+
+<div id="canvasHolder" style="margin:0%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width:100vw;
+    height:100vh;
+">
+    <canvas id="theCanvas" 
+        onmousemove="@OnMouseMove"
+        onmousedown="@OnMouseDown"
+        onmouseup="@OnMouseUp"
+        onmousewheel="@OnMouseWheel"
+        onmouseout="@OnMouseUp"
+        @ontouchstart="@OnTouchStart"
+        @ontouchmove="@OnTouchMove"
+        @ontouchend="@OnTouchEnd"
+    ></canvas>
+</div>
+<img id="image1" src="icon-192.png" width="100" height="100" style="visibility:collapse;"/>
+
+
+
+
+

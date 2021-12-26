@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>WebGLxna</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="WebGLxna.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="app">
+        <div style="margin: 1em; font-size: 2em; font-family: 'Segoe UI', sans-serif;">Loading...</div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">?</a>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/tainicom.Wasm.Canvas/js/JSObject.js"></script>
+    <script src="_content/tainicom.Wasm.Canvas/js/Canvas.js"></script>
+    <script src="_content/tainicom.Wasm.Canvas/js/CanvasGLContext.js"></script>
+
+    <script>
+        var lastFrameTime = 0;
+        function tickJS()
+        {
+            // resize the canvas to fit its parent
+            var canvas = document.getElementById('theCanvas');
+
+            var holder = document.getElementById('canvasHolder');
+            canvas.width = holder.clientWidth;
+            canvas.height = holder.clientHeight;
+
+            window.theInstance.invokeMethod('TickDotNet');
+
+            window.requestAnimationFrame(tickJS);
+        }
+
+        window.initRenderJS = (instance) =>
+        {
+            window.theInstance = instance;
+            window.requestAnimationFrame(tickJS);
+        };
+    </script>
+</body>
+
+</html>
