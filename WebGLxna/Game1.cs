@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace WebGLxna
 {
@@ -34,6 +35,9 @@ namespace WebGLxna
 
         protected override void Update(GameTime gameTime)
         {
+            var ms = Mouse.GetState();
+            var ks = Keyboard.GetState();
+
             base.Update(gameTime);
         }
 

@@ -47,13 +47,6 @@ namespace WebGLxna.Pages
             _game.Tick();
         }
 
-        [JSInvokable]
-        public void OnResize()
-        {
-            var bwnd = (MonoGame.Framework.BlazorGameWindow)_game.Window;
-            bwnd.OnResize();
-        }
-
         public void OnTouchStart(TouchEventArgs e)
         {
             //currTouchState.Position.X = (float)e.ChangedTouches[0].ClientX;

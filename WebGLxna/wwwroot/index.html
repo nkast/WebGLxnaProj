@@ -47,14 +47,9 @@
             var holder = document.getElementById('canvasHolder');
             canvas.width = holder.clientWidth;
             canvas.height = holder.clientHeight;
-
-            window.onresize = function(event)
-            {
-                var canvas = document.getElementById('theCanvas');
-                canvas.width = event.target.innerWidth;
-                canvas.height = event.target.innerHeight;
-                window.theInstance.invokeMethod('OnResize');
-            };
+            // disable context menu on right click
+            canvas.addEventListener("contextmenu", e => e.preventDefault());
+            
 
             // begin game loop
             window.requestAnimationFrame(tickJS);
