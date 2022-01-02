@@ -54,40 +54,6 @@ namespace WebGLxna.Pages
             bwnd.OnResize();
         }
 
-        public void OnMouseWheel(WheelEventArgs e)
-        {
-            //currMouseState.Wheel += (float)e.DeltaY;
-        }
-
-        public void OnMouseMove(MouseEventArgs e)
-        {
-            //currMouseState.Position = new Vector2((float)e.ClientX,(float)e.ClientY);
-        }
-
-        public void OnMouseDown(MouseEventArgs e)
-        {
-            //currMouseState.Position = new Vector2((float)e.ClientX, (float)e.ClientY);
-
-            //switch (e.Button)
-            //{
-            //    case 0:
-            //        currMouseState.LeftButton = true;
-            //        break;
-            //}
-        }
-
-        public void OnMouseUp(MouseEventArgs e)
-        {
-            //currMouseState.Position = new Vector2((float)e.ClientX, (float)e.ClientY);
-
-            //switch (e.Button)
-            //{
-            //    case 0:
-            //        currMouseState.LeftButton = false;
-            //        break;
-            //}
-        }
-
         public void OnTouchStart(TouchEventArgs e)
         {
             //currTouchState.Position.X = (float)e.ChangedTouches[0].ClientX;
