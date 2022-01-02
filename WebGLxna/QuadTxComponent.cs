@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WebGLxna
 {
-    public partial class QuadTxComponent : DrawableGameComponent
+    public class QuadTxComponent : DrawableGameComponent
     {
         ResourceContentManager _content;
         Texture2D _tx;

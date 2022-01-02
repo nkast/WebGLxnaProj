@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WebGLxna
 {
-    public partial class TriangleComponent : DrawableGameComponent
+    public class TriangleComponent : DrawableGameComponent
     {
         BasicEffect _fx;
         VertexBuffer _vb;
