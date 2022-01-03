@@ -9,6 +9,7 @@ namespace WebGLxna
 
         TriangleComponent _tri;
         QuadTxComponent _triTx;
+        SpriteComponent _sprite;
 
         public Game1()
         {
@@ -17,8 +18,10 @@ namespace WebGLxna
 
             _tri = new TriangleComponent(this);
             _triTx = new QuadTxComponent(this);
+            _sprite = new SpriteComponent(this);
             //Components.Add(_tri);
             Components.Add(_triTx);
+            //Components.Add(_sprite);
 
             //tests
             var wnd = this.Window;
