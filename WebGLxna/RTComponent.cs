@@ -7,15 +7,12 @@ namespace WebGLxna
 {
     public class RTComponent : DrawableGameComponent
     {
-        ResourceContentManager _content;
         SpriteBatch _sb;
         Texture2D _tx;
         RenderTarget2D _rt;
 
         public RTComponent(Game game) : base(game)
         {
-            _content = new ResourceContentManager(game.Services);
-            _content.RootDirectory = "Content";
 
         }
 
@@ -24,7 +21,8 @@ namespace WebGLxna
         {
             _sb = new SpriteBatch(GraphicsDevice);
             _rt = new RenderTarget2D(GraphicsDevice, 128, 128, false, SurfaceFormat.Color, DepthFormat.None, 0, RenderTargetUsage.PlatformContents);
-            _tx = _content.Load<Texture2D>("Icon192");
+            var txstream = TitleContainer.OpenStream("icon-192.png");
+            _tx = Texture2D.FromStream(GraphicsDevice, txstream);
         }
 
 
@@ -56,7 +54,6 @@ namespace WebGLxna
                 _sb.Dispose();
             }
 
-            _content = null;
             _sb = null;
             _tx = null;
         }
