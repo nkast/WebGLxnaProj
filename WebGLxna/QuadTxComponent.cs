@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 
@@ -7,7 +8,7 @@ namespace WebGLxna
 {
     public class QuadTxComponent : DrawableGameComponent
     {
-        ResourceContentManager _content;
+        ContentManager _content;
         Texture2D _tx;
         BasicEffect _fx;
         VertexBuffer _vb;
@@ -15,7 +16,7 @@ namespace WebGLxna
 
         public QuadTxComponent(Game game) : base(game)
         {
-            _content = new ResourceContentManager(game.Services);
+            _content = new ContentManager(game.Services);
             _content.RootDirectory = "Content";
 
         }
