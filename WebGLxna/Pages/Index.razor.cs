@@ -47,27 +47,5 @@ namespace WebGLxna.Pages
             _game.Tick();
         }
 
-        public void OnTouchStart(TouchEventArgs e)
-        {
-            //currTouchState.Position.X = (float)e.ChangedTouches[0].ClientX;
-            //currTouchState.Position.Y = (float)e.ChangedTouches[0].ClientY;
-            //currTouchState.IsPressed = true;
-            //prevTouchState = currTouchState;
-        }
-
-        public void OnTouchMove(TouchEventArgs e)
-        {
-        //    currTouchState.Position.X = (float)e.ChangedTouches[0].ClientX;
-        //    currTouchState.Position.Y = (float)e.ChangedTouches[0].ClientY;
-        }
-
-        public void OnTouchEnd(TouchEventArgs e)
-        {
-        //    currTouchState.Position.X = (float)e.ChangedTouches[0].ClientX;
-        //    currTouchState.Position.Y = (float)e.ChangedTouches[0].ClientY;
-        //    currTouchState.IsPressed = false;
-        }
-
-        
     }
 }
