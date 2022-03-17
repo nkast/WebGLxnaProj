@@ -26,7 +26,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.3" PrivateAssets="all" />
-    <PackageReference Include="tainicom.Xna.Framework.Blazor" Version="3.8.9012.10" />
+    <PackageReference Include="tainicom.Xna.Framework.Blazor" Version="3.8.9012.11" />
   </ItemGroup>
 
 </Project>
