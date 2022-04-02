@@ -5,7 +5,7 @@
 /intermediateDir:obj/$(Platform)
 /config:
 /profile:Reach
-/compress:False
+/compress:True
 
 #-------------------------------- References --------------------------------#
 
