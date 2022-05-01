@@ -13,8 +13,8 @@ using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
 using Microsoft.Xna.Framework;
-using tainicom.Wasm.Canvas;
-using tainicom.Wasm.Canvas.WebGL;
+using nkast.Wasm.Canvas;
+using nkast.Wasm.Canvas.WebGL;
 using WebGLxna;
 
 namespace WebGLxna.Pages
