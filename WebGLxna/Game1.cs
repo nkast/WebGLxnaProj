@@ -12,6 +12,7 @@ namespace WebGLxna
         SpriteComponent _sprite;
         SpriteFontComponent _spriteFont;
         RTComponent _rt;
+        BatchTilesComponent _batchTilesComponent;
 
         public Game1()
         {
@@ -23,11 +24,13 @@ namespace WebGLxna
             _sprite = new SpriteComponent(this);
             _spriteFont = new SpriteFontComponent(this);
             _rt = new RTComponent(this);
+            _batchTilesComponent = new BatchTilesComponent(this);
             //Components.Add(_tri);
             Components.Add(_triTx);
             //Components.Add(_sprite);
             //Components.Add(_spriteFont);
             //Components.Add(_rt);
+            //Components.Add(_batchTilesComponent);
 
             //tests
             var wnd = this.Window;
