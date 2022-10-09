@@ -22,7 +22,7 @@ namespace WebGLxna
         protected override void LoadContent()
         {           
             _sb = new SpriteBatch(GraphicsDevice);
-            _tx = _content.Load<Texture2D>("Icon192");
+            _tx = _content.Load<Texture2D>("BlazorIcon");
 
         }
 

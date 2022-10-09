@@ -5,6 +5,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+	<MonoGamePlatform>BlazorGL</MonoGamePlatform>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -20,11 +21,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Content\Icon192.xnb" />
+    <None Remove="Content\BlazorIcon.xnb" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Content\Icon192.xnb" />
+    <EmbeddedResource Include="Content\BlazorIcon.xnb" />
   </ItemGroup>
 
   <ItemGroup>

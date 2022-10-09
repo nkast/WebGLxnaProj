@@ -44,7 +44,7 @@ namespace WebGLxna
                     2,3,0
             };
 
-            _tx = _content.Load<Texture2D>("Icon192");
+            _tx = _content.Load<Texture2D>("BlazorIcon");
             for(int i = 0; i < vertices.Length; i++)
                 vertices[i].Position.X *= ((float)_tx.Width / (float)_tx.Height);
 

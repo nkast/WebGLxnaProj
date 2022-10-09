@@ -12,7 +12,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Icon192.png
+#begin BlazorIcon.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -21,13 +21,13 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Icon192.png
+/processorParam:TextureFormat=DxtCompressed
+/build:BlazorIcon.png
 
 #begin Font.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Color
+/processorParam:TextureFormat=DxtCompressed
 /build:Font.spritefont
 
