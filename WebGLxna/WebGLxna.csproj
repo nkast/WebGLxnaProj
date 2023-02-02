@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
 	<MonoGamePlatform>BlazorGL</MonoGamePlatform>
   </PropertyGroup>
@@ -21,11 +22,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Content\BlazorIcon.xnb" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Content\BlazorIcon.xnb" />
+    <Compile Include="BatchTilesComponent.cs" />
+    <Compile Include="Pages\Index.razor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="QuadTxComponent.cs" />
+    <Compile Include="ResourceContentManager.cs" />
+    <Compile Include="RTComponent.cs" />
+    <Compile Include="SpriteComponent.cs" />
+    <Compile Include="SpriteFontComponent.cs" />
+    <Compile Include="TriangleComponent.cs" />
+    <Compile Include="WebGLxnaGame.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,4 +41,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.7" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Content\BlazorIcon.xnb" />
+    <EmbeddedResource Include="Content\BlazorIcon.xnb" />
+  </ItemGroup>
 </Project>

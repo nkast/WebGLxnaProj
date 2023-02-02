@@ -1,9 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
 
 namespace WebGLxna
 {
-    public class Game1 : Game
+    public class WebGLxnaGame : Game
     {
         private GraphicsDeviceManager graphics;
 
@@ -14,7 +17,7 @@ namespace WebGLxna
         RTComponent _rt;
         BatchTilesComponent _batchTilesComponent;
 
-        public Game1()
+        public WebGLxnaGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -55,13 +58,10 @@ namespace WebGLxna
 
         protected override void Draw(GameTime gameTime)
         {
-            // clear
             GraphicsDevice.SetRenderTarget(null);
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             base.Draw(gameTime);
         }
-
     }
-
 }
