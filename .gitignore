@@ -1,5 +1,6 @@
 /.vs/
 */bin/
 */obj/
+*/wwwroot/Content/
 *.user
 *.bak

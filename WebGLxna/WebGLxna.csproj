@@ -45,4 +45,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.11" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <MonoGameContentReference Include="..\WebGLxnaContent\WebGLxnaContent.mgcb">
+      <Link>Content\WebGLxnaContent.mgcb</Link>
+    </MonoGameContentReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder17.targets" />
 </Project>
