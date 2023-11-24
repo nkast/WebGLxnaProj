@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace WebGLxna
 {
@@ -49,8 +53,19 @@ namespace WebGLxna
 
         protected override void Update(GameTime gameTime)
         {
-            var ms = Mouse.GetState();
-            var ks = Keyboard.GetState();
+            MouseState ms = Mouse.GetState();
+            KeyboardState ks = Keyboard.GetState();
+            GamePadState ps = default;
+            try { ps = GamePad.GetState(PlayerIndex.One); }
+            catch (NotImplementedException) { /* ignore gamePadState */ }
+
+            if (keyboardState.IsKeyDown(Keys.Escape) ||
+                keyboardState.IsKeyDown(Keys.Back) ||
+                gamePadState.Buttons.Back == ButtonState.Pressed)
+            {
+                try { Exit(); }
+                catch (PlatformNotSupportedException) { /* ignore */ }
+            }
 
             base.Update(gameTime);
         }
