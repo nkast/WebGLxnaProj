@@ -59,9 +59,9 @@ namespace WebGLxna
             try { ps = GamePad.GetState(PlayerIndex.One); }
             catch (NotImplementedException) { /* ignore gamePadState */ }
 
-            if (keyboardState.IsKeyDown(Keys.Escape) ||
-                keyboardState.IsKeyDown(Keys.Back) ||
-                gamePadState.Buttons.Back == ButtonState.Pressed)
+            if (ks.IsKeyDown(Keys.Escape) ||
+                ks.IsKeyDown(Keys.Back) ||
+                ps.Buttons.Back == ButtonState.Pressed)
             {
                 try { Exit(); }
                 catch (PlatformNotSupportedException) { /* ignore */ }
