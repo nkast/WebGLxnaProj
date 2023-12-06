@@ -30,12 +30,12 @@
     <script src="_framework/blazor.webassembly.js" autostart="false"></script>
     <script type="module">
         import { BrotliDecode } from './js/decode.min.js';
-        var enableBrotliDecompression = true;
+        // Set this to enable Brotli (.br) decompression on static webServers 
+        // that don't support content compression and http://.
+        var enableBrotliDecompression = false;
         Blazor.start({
             loadBootResource: function (type, name, defaultUri, integrity)
             {
-                // This function enables Brotli (br) decompression for http: connections
-                // and for webservers that don't support content compression.
                 if (enableBrotliDecompression === true && type !== 'dotnetjs' && location.hostname !== 'localhost')
                 {
                     return (async function()
@@ -58,13 +58,14 @@
         });
     </script>
 
-    <script src="_content/nkast.Wasm.Dom/js/JSObject.6.0.2.js"></script>
-    <script src="_content/nkast.Wasm.Dom/js/Window.6.0.2.js"></script>
-    <script src="_content/nkast.Wasm.Dom/js/Document.6.0.2.js"></script>
-    <script src="_content/nkast.Wasm.XHR/js/XHR.6.0.2.js"></script>
-    <script src="_content/nkast.Wasm.Canvas/js/Canvas.6.0.2.js"></script>
-    <script src="_content/nkast.Wasm.Canvas/js/CanvasGLContext.6.0.2.js"></script>
-    <script src="_content/nkast.Wasm.Audio/js/Audio.6.0.2.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/JSObject.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Window.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Document.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Dom/js/Media.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.XHR/js/XHR.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Canvas/js/Canvas.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Canvas/js/CanvasGLContext.6.0.5.js"></script>
+    <script src="_content/nkast.Wasm.Audio/js/Audio.6.0.5.js"></script>
 
     <script>
         function tickJS()
