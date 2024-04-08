@@ -34,7 +34,7 @@ namespace WebGLxna
             //Components.Add(_tri);
             Components.Add(_triTx);
             //Components.Add(_sprite);
-            //Components.Add(_spriteFont);
+            Components.Add(_spriteFont);
             //Components.Add(_rt);
             //Components.Add(_batchTilesComponent);
 

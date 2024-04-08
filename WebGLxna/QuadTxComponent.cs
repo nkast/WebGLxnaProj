@@ -2,7 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace WebGLxna
 {
@@ -13,6 +14,8 @@ namespace WebGLxna
         BasicEffect _fx;
         VertexBuffer _vb;
         IndexBuffer _ib;
+        VideoPlayer _videoPlayer;
+        Video _video1;
 
         public QuadTxComponent(Game game) : base(game)
         {
@@ -48,6 +51,11 @@ namespace WebGLxna
             for(int i = 0; i < vertices.Length; i++)
                 vertices[i].Position.X *= ((float)_tx.Width / (float)_tx.Height);
 
+            // 
+            _video1 = _content.Load<Video>("Media\\Video1");
+            _videoPlayer = new VideoPlayer();
+
+
             _vb = new VertexBuffer(GraphicsDevice, VertexPositionColorTexture.VertexDeclaration, 4, BufferUsage.None);
             _vb.SetData(vertices);
 
@@ -62,6 +70,29 @@ namespace WebGLxna
             _fx.FogEnabled = false;
         }
 
+        KeyboardState prevkb;
+
+        public override void Update(GameTime gameTime)
+        {
+            KeyboardState kb = Keyboard.GetState();
+
+            if (kb.IsKeyDown(Keys.Q) && prevkb.IsKeyUp(Keys.Q))
+            {
+                _videoPlayer.IsLooped = true;
+                _videoPlayer.Play(_video1);
+            }
+            if (kb.IsKeyDown(Keys.W) && prevkb.IsKeyUp(Keys.W))
+                _videoPlayer.Pause();
+            if (kb.IsKeyDown(Keys.E) && prevkb.IsKeyUp(Keys.E))
+                _videoPlayer.Resume();
+            if (kb.IsKeyDown(Keys.R) && prevkb.IsKeyUp(Keys.R))
+                _videoPlayer.Stop();
+
+            this.Game.Window.Title = _videoPlayer.State.ToString();
+
+            prevkb = kb;
+        }
+
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.RasterizerState = RasterizerState.CullNone;
@@ -69,14 +100,20 @@ namespace WebGLxna
             GraphicsDevice.SamplerStates[0] = SamplerState.LinearClamp;
             GraphicsDevice.BlendState = BlendState.Opaque;
 
-            var rps = 1 / 4f;
-            var world = Matrix.CreateRotationX(-MathHelper.Tau * rps  * (float)gameTime.TotalGameTime.TotalSeconds);
+            if (_videoPlayer.Video != null)
+            {
+                Texture2D _videoTx = _videoPlayer.GetTexture();
+                _tx = _videoTx;
+            }
+
+            float rps = 1 / 4f;
+            Matrix world = Matrix.CreateRotationX(-MathHelper.Tau * rps  * (float)gameTime.TotalGameTime.TotalSeconds);
 
             _fx.World = world;
             _fx.View = Matrix.CreateLookAt(Vector3.Backward * 2f, Vector3.Zero, Vector3.Up);
-            var aspectratio = GraphicsDevice.Viewport.AspectRatio;
-            var hw = (2f * aspectratio) / 2f;
-            var hh = (2f) / 2f;
+            float aspectratio = GraphicsDevice.Viewport.AspectRatio;
+            float hw = (2f * aspectratio) / 2f;
+            float hh = (2f) / 2f;
             _fx.Projection = Matrix.CreatePerspectiveOffCenter(-hw, hw, -hh, hh, 1f, 3f);
             
             _fx.Texture = _tx;

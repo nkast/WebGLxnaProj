@@ -30,7 +30,7 @@ namespace WebGLxna
         public override void Draw(GameTime gameTime)
         {
             _sb.Begin();
-            _sb.DrawString(_font, "Hello Blazor!", Vector2.Zero, Color.White);
+            _sb.DrawString(_font, "Q - Play, W - pause, E - resume, R - Stop", new Vector2(GraphicsDevice.Viewport.Width/3f, GraphicsDevice.Viewport.Height / 2f), Color.Black);
             _sb.End();
 
         }
