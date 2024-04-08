@@ -32,3 +32,8 @@
 /processorParam:TextureFormat=DxtCompressed
 /build:Font.spritefont
 
+#begin Media/Video1.mp4
+/importer:H264Importer
+/processor:VideoProcessor
+/build:Media/Video1.mp4
+
