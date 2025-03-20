@@ -1,0 +1,99 @@
+/* /MainLayout.razor.rz.scp.css */
+.page[b-01pacwa1nd]
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-01pacwa1nd]
+{
+    flex: 1;
+}
+
+.sidebar[b-01pacwa1nd]
+{
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-01pacwa1nd]
+{
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-01pacwa1nd]  a, .top-row[b-01pacwa1nd]  .btn-link
+    {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-01pacwa1nd]  a:hover, .top-row[b-01pacwa1nd]  .btn-link:hover
+    {
+        text-decoration: underline;
+    }
+
+    .top-row[b-01pacwa1nd]  a:first-child
+    {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px)
+{
+    .top-row:not(.auth)[b-01pacwa1nd]
+    {
+        display: none;
+    }
+
+    .top-row.auth[b-01pacwa1nd]
+    {
+        justify-content: space-between;
+    }
+
+    .top-row[b-01pacwa1nd]  a, .top-row[b-01pacwa1nd]  .btn-link
+    {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px)
+{
+    .page[b-01pacwa1nd]
+    {
+        flex-direction: row;
+    }
+
+    .sidebar[b-01pacwa1nd]
+    {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-01pacwa1nd]
+    {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-01pacwa1nd]  a:first-child
+    {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-01pacwa1nd], article[b-01pacwa1nd]
+    {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
